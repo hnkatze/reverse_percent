@@ -37,8 +37,8 @@ import Layout from '../layouts/Layout.astro';
 	if (button && valor && porcentaje && res) {
 		button.addEventListener('click', () => {
 			if (valor.value && porcentaje.value) {
-				const result = parseFloat(valor.value) * (1 + (parseFloat(porcentaje.value) / 100));
-				res.textContent = `El ${porcentaje.value}% de ${formatMillesimal(valor.value)}.00 es ${result.toFixed(2)}`;
+				const result = parseFloat(valor.value) / (1 - (parseFloat(porcentaje.value) / 100));
+				res.textContent = `El valor original antes del ${porcentaje.value}% de descuento sobre ${formatMillesimal(valor.value)}.00 es ${result.toFixed(2)}`;
 			}
 		});
 	}
